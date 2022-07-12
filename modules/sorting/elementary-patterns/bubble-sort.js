@@ -1,5 +1,6 @@
 // bubble sort - algo where the largest values bubble to the top
-// time - O(n^2)
+// time - O(n^2); space O(1)
+//  *bubble sort does work well with nearly sorted data
 
 // es5
 function swapOld(arr, idx1, idx2) {

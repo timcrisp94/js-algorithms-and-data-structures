@@ -1,5 +1,6 @@
 // insertion sort - builds up gradually by creating a larger left portion which is always sorted
-// also O(n^2)
+// also O(n^2) time, O(1) space
+// * insertion sort works well if you have a running line of data
 
 /*
 - start with arr[1]
