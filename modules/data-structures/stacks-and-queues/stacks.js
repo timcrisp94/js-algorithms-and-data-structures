@@ -38,8 +38,8 @@ BIG O of stacks
 //  - we will notice that push and pop here are the same as shift and unshift in a singly linked list
 
 class Node {
-  constructor(value) {
-    this.value = value
+  constructor(val) {
+    this.val = val
     this.next = null
   }
 }
@@ -70,7 +70,7 @@ class Stack {
     }
     this.first = this.first.next
     this.size--
-    return temp.value
+    return temp.val
   }
 }
 
