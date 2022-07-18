@@ -1,6 +1,19 @@
 // doubly linked lists contain a next and a previous
 // - compared to a singly linked list, you can traverse a doubly backwards easily
 // - more memory, and thus more flexibility, but, more memory
+// * great example of a doubly linked list is your browser history
+
+/* -- doubly linked list Big O --
+
+    - time - 
+- insertion - O(1)
+- removal - O(1) - not the case for singly linked list which is O(n)
+- searching - O(n) - technically O(n/2)
+- access - O(n)
+
+    
+
+*/
 
 class Node {
   constructor(val) {
@@ -97,6 +110,33 @@ class DoublyLinkedList {
     }
     return false
   }
+  insert(index, val) {
+    if (index < 0 || index >this.length) return false
+    if (index === 0) return !!this.unshift(val)
+    if (index === this.length) return !!this.push(val)
+
+    let newNode = new Node(val)
+    let beforeNode = this.get(index - 1)
+    let afterNode = beforeNode.next
+    
+    beforeNode.next = newNode, newNode.prev = beforeNode
+    newNode.next = afterNode, afterNode.prev = newNode
+    this.length++
+    return true
+  }
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined
+    if (index === 0) return this.shift()
+    if (index === this.length - 1) return this.pop()
+    
+    let removedNode = this.get(index)
+    removedNode.prev.next = removedNode.next
+    removedNode.next.prev = removedNode.prev
+    removedNode.next = null
+    removedNode.prev = null
+    this.length--
+    return removedNode
+  }
 }
 
 
@@ -104,8 +144,7 @@ let list = new DoublyLinkedList()
 list.push("Harry")
 list.push("Ron")
 list.push("Hermione")
-console.log(list.unshift("hagrid"), list)
-console.log(list.set(3, "bubba"), list)
+
 
 
 // console.log(list.push(99))
@@ -118,4 +157,6 @@ console.log(list.set(3, "bubba"), list)
 // console.log(list)
 // console.log(list.shift())
 // console.log(list.shift())
+// console.log(list.insert(3, "Tonks"), list)
+// console.log(list.remove(1), list)
 // console.log(list)

@@ -82,7 +82,7 @@ class SinglyLikedList {
   insert(index, val) {
     if (index < 0 || index > this.length) return false
     if (index === 0) {
-      this.push(val)
+      this.unshift(val)
       return true
     }
     if (index === this.length) {
