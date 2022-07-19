@@ -1,0 +1,12 @@
+- you'll get more comfortable with the questions
+- try to solve in 30 minutes
+
+brute force can take a lot of time
+
+interviewers are there to help
+
+dynamic programming
+
+good variable names, make your code easy to understand
+speaking as your thinking; speak to what you're going to write, speak to your assumptions
+- thinking about inputs, edge cases
